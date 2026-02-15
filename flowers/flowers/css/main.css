@@ -198,6 +198,10 @@ body {
   border-radius: 50%;
   background-color: #f0f0f0;
 }
+.flower--6 { left: 75%; }
+.flower--7 { left: 85%; }
+.flower--8 { left: 95%; }
+
 .flower__white-circle::after {
   content: "";
   position: absolute;
@@ -1315,7 +1319,42 @@ body {
     transform: scale(0);
   }
 }
-.container * {
-  -webkit-animation-play-state: paused !important;
-          animation-play-state: paused !important;
+.flower {
+    left: 50% !important; /* Todas partem do centro */
+    bottom: 5vmin;
+    transform-origin: bottom center;
+}
+
+/* --- CONFIGURAÇÃO DO LEQUE DO BUQUÊ --- */
+
+.flower--1 { transform: rotate(0deg); } /* Central */
+
+.flower--2 { transform: rotate(15deg); } /* Leve inclinação direita */
+
+.flower--3 { transform: rotate(-15deg); } /* Leve inclinação esquerda */
+
+.flower--4 { 
+    transform: rotate(35deg) scale(0.9); 
+    filter: brightness(0.8); /* Dá profundidade */
+}
+
+.flower--5 { 
+    transform: rotate(-35deg) scale(0.9); 
+    filter: brightness(0.8);
+}
+
+.flower--6 { transform: rotate(50deg) scale(0.8); }
+
+.flower--7 { transform: rotate(-50deg) scale(0.8); }
+
+/* --- VARIAÇÃO DE CORES PARA O BUQUÊ --- */
+
+/* Flores pares em tons de Rosa/Vermelho */
+.flower--2 .flower__leaf, .flower--4 .flower__leaf, .flower--6 .flower__leaf {
+    background-image: linear-gradient(to top, #ff4d6d, #ff71b2) !important;
+}
+
+/* Flores ímpares em tons de Roxo/Branco */
+.flower--3 .flower__leaf, .flower--5 .flower__leaf, .flower--7 .flower__leaf {
+    background-image: linear-gradient(to top, #ffffff, #9ff5ff) !important;
 }
